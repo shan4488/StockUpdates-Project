@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Some test files
+gui_main.py
+loginT.txt
+money_ctrl.py
+reg.txt
+stock_indicators.py
+stockNews.py
+testRoom.py
