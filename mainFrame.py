@@ -256,7 +256,7 @@ class App(qtw.QMainWindow):
 
         headers = {
             'x-rapidapi-host': "alpha-vantage.p.rapidapi.com",
-            'x-rapidapi-key': "666efa009emshba1a762660894b3p19ad9cjsn95b450d38e97"
+            'x-rapidapi-key': "Your Rapid API Key"              # Add your Rapid API key here in this section
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
         # calculate yesterday
@@ -297,7 +297,7 @@ class App(qtw.QMainWindow):
         headers = {
             'content-type': "text/plain",
             'x-rapidapi-host': "yh-finance.p.rapidapi.com",
-            'x-rapidapi-key': "666efa009emshba1a762660894b3p19ad9cjsn95b450d38e97"
+            'x-rapidapi-key': "Your Rapid API Key"          # Add your Rapid API key here in this section
         }
 
         response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
