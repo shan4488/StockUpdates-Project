@@ -8,7 +8,7 @@ counter = 1
 
 class Ui_Register(object):
 
-    def setupUi(self, Dialog):
+    def setupUi(self, Dialog):              # Complete registration widget set up
         Dialog.setObjectName("Dialog")
         Dialog.resize(900, 844)
         Dialog.setStyleSheet("background-color: rgb(85, 85, 127);")
@@ -82,7 +82,7 @@ class Ui_Register(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, Dialog):                        # to refresh the UI
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Registration"))
         self.accountheading.setText(_translate("Dialog", "Create an account"))
@@ -94,15 +94,15 @@ class Ui_Register(object):
         self.alreadysigned.setText(_translate("Dialog", "Already Signed In"))
         self.registerBtn.setText(_translate("Dialog", "Sign Up"))
 
-    def openWindow(self):
+    def openWindow(self):                           #To open the Login Panel
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_Login()
         self.ui.setupUi(self.window)
         self.window.show()
         Registeration.hide()
 
-    def regIn(self):
-        global counter  # counter for the reg_id  <<<<<<<<LOOK AT THIS >>>>>>>>>>>>>>>>>>
+    def regIn(self):                    # Validation at the registration time
+        global counter
         radioFlag = 0
         uniqueUsrnameFlag = 0
         name = self.Name.text()
@@ -143,21 +143,21 @@ class Ui_Register(object):
         self.password.clear()
         self.gender.clear()
 
-    def msgBox(self, text, title):
+    def msgBox(self, text, title):      # Critical msg box
         msg = QtWidgets.QMessageBox()
         msg.setIcon(QtWidgets.QMessageBox.Critical)
         msg.setText(text)
         msg.setWindowTitle(title)
         msg.exec_()
 
-    def successMsgBox(self, text, title):
+    def successMsgBox(self, text, title):      # Success msg box
         msg = QtWidgets.QMessageBox()
         msg.setText(text)
         msg.setWindowTitle(title)
         msg.exec_()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":                     # Driver code 
     app = QtWidgets.QApplication(sys.argv)
     Registeration = QtWidgets.QDialog()
     ui = Ui_Register()
